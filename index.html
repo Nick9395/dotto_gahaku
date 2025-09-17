@@ -1,0 +1,69 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>dotto gahaku</title>
+    <link rel="stylesheet" href="application.css">
+    <link rel="icon" type="image/png" href="favicon.png" size="32x32">
+    <script src="application.js" defer></script>
+  </head>
+
+  <body>
+    <div class="title-wrapper">
+      <div class="title-container">
+        <span class="title-font">
+          ★ドット画伯★
+          <img src="icon.png" alt="icon" class="title-icon">
+        </span>
+        <span class="sub-font">左クリックで塗る / 右クリックで消す  (60x60マス)</span>
+      </div>
+    </div>
+
+    <div class="header">
+      <div class="palette" id="palette">
+        <!-- カラーボタン -->
+        <div class="color-option" style="background-color: black;" data-color="black"></div>
+        <div class="color-option" style="background-color: red;" data-color="red"></div>
+        <div class="color-option" style="background-color: blue;" data-color="blue"></div>
+        <div class="color-option" style="background-color: #00eeff;" data-color="#00eeff"></div>
+        <div class="color-option" style="background-color: green;" data-color="green"></div>
+        <div class="color-option" style="background-color: #44ff00;" data-color="#44ff00"></div>
+        <div class="color-option" style="background-color: yellow;" data-color="yellow"></div>
+        <div class="color-option" style="background-color: orange;" data-color="orange"></div>
+        <div class="color-option" style="background-color: #944700;" data-color="#944700"></div>
+        <div class="color-option" style="background-color: purple;" data-color="purple"></div>
+        <div class="color-option" style="background-color: #fd80ff;" data-color="#fd80ff"></div>
+        <button id="openColorPicker" class="rainbow-button"></button>
+      </div>
+
+      <!-- ボタン -->
+      <button id="task-save-btn" class="pry-button">保存</button>
+      <button id="task-delete-btn" class="pry-button">削除</button>
+      <button id="dl-btn" class="pry-button">画像DL</button>
+       <a href="how-to.html" id="how-to-link"class="pry-link">使い方</a>
+
+      <div id="colorPopup">
+        <input type="color" id="customColor" value="#000000">
+        <button id="closeColorPicker">✕</button>
+      </div>
+    </div>
+
+    <!-- グリッド線(キャンパス) -->
+    <div class="grid" id="grid"></div>
+
+    <!-- メッセージボックス -->
+    <div id="msg-box" role="dialog" aria-modal="true" aria-labelledby="msg-text">
+      <div class="message-text">
+        <p id="msg-text">メッセージ</p>
+        <div class="button-group">
+          <button id="yes-btn" class="yes-button">Yes</button>
+          <button id="no-btn" class="no-button">No</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- フラッシュメッセージ -->
+     <div id="flash-msg" class="flash-message" style="display: none;"></div>
+  </body>
+</html>

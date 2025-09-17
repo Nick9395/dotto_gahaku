@@ -1,0 +1,263 @@
+/* application.css */
+
+body {
+  font-family: sans-serif;
+  padding: 10px;
+  background: #ffffff;
+}
+
+.pry-button {
+  background: #ffffff;
+  color: #0055ff;
+  border: 2px solid #0055ff;
+  cursor: pointer;
+
+  height: 30px;
+}
+
+.pry-button:hover {
+  background-color: #cb66f3;
+  border: 2px solid #daaaed;
+  color: #ffffff;
+  font-weight: bold;
+  /* border: 1px solid #3f7efa; */
+}
+
+.rainbow-button {
+  background: linear-gradient(90deg, #ff0000, #ffae36, #51ff51, #002aff, #8400ff);
+  color: #ffffff;
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+}
+
+.pry-link {
+  background: #ffffff;
+  color: #0055ff;
+  border: 2px solid #0055ff;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 2px 5px;
+
+}
+
+.pry-link:hover {
+  background-color: #cb66f3;
+  border: 2px solid #daaaed;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.rainbow-button:hover {
+  opacity: 0.8;
+}
+
+.back-link {
+  display: inline-block;
+  background: #ffffff;
+  color: #0055ff;
+  border: 2px solid #0055ff;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 8px 2px;
+  margin: 20px 30px 30px 10px;
+}
+
+.back-link:hover {
+  background-color: #cb66f3;
+  border: 2px solid #daaaed;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* パレットやボタンの調整 */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* ボタン同士の間隔 */
+  margin-bottom: 10px;
+}
+
+.palette {
+  display: flex;
+  gap: 5px;
+}
+
+/* カラーボタンの調整 */
+.color-option {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.color-option:hover {
+  opacity: 0.8;
+}
+
+/* color-icon画像用 */
+.icon-option img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover; /* 縦横比を保たずに枠内にフィットさせる */
+  display: block;
+  border: none;
+}
+
+#colorPopup {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 100;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+}
+
+.grid {
+  display: grid; /* マス目を作る */
+  grid-template-columns: repeat(60, 10px); /* 縦のマス */
+  grid-template-rows: repeat(60, 10px); /* 横のマス */
+  gap: 1px;
+  width: fit-content;
+  margin: auto;
+  border: 1px solid #ccc;
+  user-select: none;
+}
+
+.cell {
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.title-wrapper {
+  display: flex;
+  justify-content: center; /* 中央に配置 */
+  /* margin: 10px 0;          お好みで上下余白 */
+}
+
+.title-container {
+  display: inline-flex;
+  align-items: center;
+  /* text-align: center; */
+}
+
+.title-font {
+  font-weight: bold;
+  margin-right: 0.5em;
+  display: inline-flex;
+  align-items: center;
+  font-size: 26px;
+}
+
+.title-icon {
+  width: 40px;  /* 小さなサイズに調整 */
+  height: 40px;
+  margin-left: 0.3em;  /* タイトル文字との間に余白 */
+}
+
+.sub-font {
+  font-size: 14px;
+  color: #442400;
+
+}
+.title-image-2 {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  height: auto;
+
+
+}
+
+/* メッセージボックスのレイアウト */
+#msg-box {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 40vh;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.message-text {
+  background-color: #ffffff;
+  color: #0055ff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #0055ff;
+  width: 250px;
+  text-align: center;
+  position: relative;
+}
+
+.yes-button {
+  background: #0055ff;
+  color: #ffffff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.yes-button:hover {
+  background: #3f7efa;
+  border: 1px solid #58defb;
+}
+
+.no-button {
+  background: #ffffff;
+  color: #0055ff;
+  border: 1px solid #0055ff;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.no-button:hover {
+  background-color: #ffffff;
+  color: #22d6ff;
+  border: 1px solid #22d6ff;
+}
+
+.button-group {
+  display: flex; /* ボタンを横並びにする */
+  justify-content: center; /* ボタン全体を中央寄せ */
+  gap: 30px; /* ← yes/noボタン間のスペースを設定 */
+  margin-top: 30px; /* 任意で上にスペース */
+}
+
+.flash-message {
+  position: fixed;
+  top: 0; /* 上端にくっつける（変更） */
+  left: 0; /* 左端から開始 */
+  width: 100vw; /* 横幅を画面全体に */
+  background-color: #ee8040;
+  color: rgb(0, 0, 0);
+  padding: 0px 5px;
+  z-index: 10000;
+  font-size: 14px;
+  opacity: 0.95;
+  transition: opacity 0.3s ease;
+  text-align: center; /* テキストを中央に */
+}
+
+.flash-message.hide {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
